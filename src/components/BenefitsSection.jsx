@@ -1,25 +1,45 @@
 import React from 'react';
 
+const testimonialsData = [
+  {
+    photoUrl: "https://randomuser.me/api/portraits/women/68.jpg",
+    name: "Juliana Almeida",
+    city: "São Paulo",
+    result: "-15kg em 4 meses",
+    quote: "A metodologia do Deusmar transformou completamente minha relação com o exercício. O app me mantém motivada e os resultados são impressionantes."
+  },
+  {
+    photoUrl: "https://randomuser.me/api/portraits/men/75.jpg",
+    name: "Ricardo Borges",
+    city: "Lisboa",
+    result: "+8kg de massa magra",
+    quote: "Profissionalismo exemplar e um plano de treino que realmente funciona. O acompanhamento online superou minhas expectativas."
+  },
+  {
+    photoUrl: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Fernanda Costa",
+    city: "Miami",
+    result: "Recuperação pós-parto",
+    quote: "Encontrei no Deusmar o suporte que precisava para voltar a treinar com segurança e eficácia. Me sinto mais forte e confiante."
+  }
+];
+
 const BenefitsSection = () => {
   return (
-    <section className="benefits-section">
-      <h2 className="scroll-animate fade-in">Por Que Treinar Com Deusmar?</h2>
-      <div className="benefits-grid">
-        <div className="benefit-item scroll-animate flip-in">
-          <img src="https://img.icons8.com/ios-filled/50/FFFFFF/trophy.png" alt="Ícone de Troféu" className="benefit-icon" />
-          <h3>Resultados Reais</h3>
-          <p>Foco na sua meta com treinos cientificamente comprovados.</p>
-        </div>
-        <div className="benefit-item scroll-animate flip-in delay-1">
-          <img src="https://img.icons8.com/ios-filled/50/FFFFFF/calendar.png" alt="Ícone de Calendário" className="benefit-icon" />
-          <h3>Flexibilidade Total</h3>
-          <p>Treine onde e quando quiser com o seu novo app.</p>
-        </div>
-        <div className="benefit-item scroll-animate flip-in delay-2">
-          <img src="https://img.icons8.com/ios-filled/50/FFFFFF/chat.png" alt="Ícone de Chat" className="benefit-icon" />
-          <h3>Suporte Descomplicado</h3>
-          <p>Tire suas dúvidas diretamente com o personal.</p>
-        </div>
+    <section className="results-section">
+      <h2 className="scroll-animate fade-in">Resultados que falam por si</h2>
+      <div className="results-grid">
+        {testimonialsData.map((testimonial, index) => (
+          <div key={index} className={`result-card scroll-animate scale-in delay-${index}`}>
+            <img src={testimonial.photoUrl} alt={`Foto de ${testimonial.name}`} className="result-photo" />
+            <div className="result-card-content">
+              <h4>{testimonial.name}</h4>
+              <p className="result-city">{testimonial.city}</p>
+              <p className="result-highlight">{testimonial.result}</p>
+              <p className="result-quote">"{testimonial.quote}"</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

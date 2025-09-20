@@ -373,78 +373,137 @@ section:nth-of-type(even) {
     display: block; /* Para centralizar */
 }
 
-/* Seções de Benefícios e Depoimentos */
-.benefits-section {
+/* Seção de Resultados (antiga Benefits) */
+.results-section {
     background-color: var(--color-gray);
 }
 
-.benefits-grid {
+.results-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
 }
 
-.benefit-item {
+.result-card {
     background-color: var(--color-dark-red);
-    padding: 40px;
+    padding: 30px;
     border-radius: 12px;
     max-width: 350px;
+    text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     transition: transform 0.3s ease;
 }
 
-.benefit-item:hover {
+.result-card:hover {
     transform: translateY(-10px);
 }
 
-.benefit-icon {
-    width: 60px;
-    height: 60px;
+.result-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid var(--color-primary);
+}
+
+.result-card-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--color-white);
+}
+
+.result-city {
+    color: #ccc;
+    font-size: 0.9rem;
     margin-bottom: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.benefits-item h3 {
+.result-highlight {
+    color: var(--color-primary);
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
-.testimonials-section {
+.result-quote {
+    font-style: italic;
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+.pricing-section {
     background-color: var(--color-black);
 }
 
-.testimonials-grid {
+.pricing-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch; /* Alinha os cards na parte superior */
     gap: 40px;
 }
 
-.testimonial-card {
+.pricing-card {
     background-color: var(--color-gray);
     padding: 40px;
     border-radius: 12px;
     max-width: 380px;
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid transparent;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-10px);
+.pricing-card.highlight {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(181, 11, 16, 0.4);
+    border-color: var(--color-primary);
 }
 
-.testimonial-photo-small {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 20px;
-    border: 2px solid var(--color-primary);
+.pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--color-white);
 }
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    text-align: left;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.check-icon {
+    flex-shrink: 0; /* Impede que o ícone seja espremido */
+}
+
+.pricing-card .cta-button {
+    width: 100%;
+    margin-top: auto; /* Empurra o botão para o final do card */
+}
+
 
 /* Formulário de Contato */
 .cta-form-section {
