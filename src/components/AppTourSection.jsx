@@ -7,17 +7,17 @@ const features = [
   {
     title: "Acompanhe seu progresso",
     description: "Insira cargas e repetições a cada treino e veja sua evolução em gráficos detalhados.",
-    image: "imagemAvaliacoes"
+    image: imagemProgresso
   },
   {
     title: "Avaliações sempre com você",
     description: "Faça o download de suas avaliações físicas e posturais diretamente no app.",
-    image: "https://via.placeholder.com/400x600?text=Avaliações+GIF"
+    image: imagemAvaliacoes
   },
   {
     title: "Supervisão total",
     description: "Meu acompanhamento contínuo sobre seu desempenho para ajustes precisos no seu plano.",
-    image: "https://via.placeholder.com/400x600?text=Supervisão+GIF"
+    image: imagemSupervisao
   }
 ];
 

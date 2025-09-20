@@ -53,7 +53,7 @@ p {
 /* Header (Seção Hero) */
 .hero-section {
     background: url('https://via.placeholder.com/1920x1080/000000/3A3A3A?text=Hero+Background') no-repeat center center/cover;
-    padding: 150px 50px;
+    padding: 100px 50px;
     text-align: center;
     position: relative;
     overflow: hidden;

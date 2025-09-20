@@ -2,9 +2,9 @@ import React from 'react';
 import StarBorder from './StarBorder';
 import CardSwap, { Card } from './CardSwap';
 import RotatingText from './RotatingText';
+import logo from '../assets/logo.png';
 
 const Header = () => {
-  const logoUrl = 'https://via.placeholder.com/90x90?text=Logo';
   const rotatingTexts = [
     "Transforme Seu Corpo e Sua Vida",
     "Com Experiência de 10 Anos",
@@ -16,7 +16,7 @@ const Header = () => {
       <div className="hero-content">
         <div className="hero-layout">
           <div className="hero-text-content">
-            <h1>DEUSMAR PERSONAL TRAINER</h1>
+            <img src={logo} alt="Deusmar Personal Trainer" style={{ width: '300px', marginBottom: '20px' }}/>
             <div className="subtitle">
               <span>Transforme</span>
               <RotatingText
