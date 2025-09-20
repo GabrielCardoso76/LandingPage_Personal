@@ -139,6 +139,15 @@ p {
     font-size: 1.5rem;
     font-weight: 300;
     margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.rotating-text-background {
+    background-color: var(--color-primary);
+    padding: 4px 12px;
+    border-radius: 8px;
 }
 
 .cta-button {

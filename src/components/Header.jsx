@@ -23,11 +23,14 @@ const Header = () => {
         <div className="hero-layout">
           <div className="hero-text-content">
             <h1>DEUSMAR PERSONAL TRAINER</h1>
-            <RotatingText
-              texts={rotatingTexts}
-              mainClassName="subtitle"
-              splitBy="words"
-            />
+            <div className="subtitle">
+              <span>Transforme</span>
+              <RotatingText
+                texts={['Seu Corpo', 'Sua Vida']}
+                mainClassName="rotating-text-background"
+                splitBy="words"
+              />
+            </div>
             <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '20px', flexWrap: 'wrap', marginTop: '40px' }}>
               <StarBorder as="a" href="#app-tour-section" color="red" speed="4s">
                 QUERO SABER MAIS
