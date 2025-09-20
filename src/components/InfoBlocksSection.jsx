@@ -11,11 +11,22 @@ const InfoBlocksSection = () => {
         </div>
       </div>
       <div className="info-block dedication-block scroll-animate slide-right">
-        <h2>10 Anos de Dedicação</h2>
-        <p>Desde 2014, Deusmar tem mudado a vida de milhares de alunos. Planos sob medida, motivação constante e resultados garantidos.</p>
-        <div className="testimonial">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de Ana S." className="testimonial-photo" />
-          <p className="testimonial-text">"Perdi 30kg e ganhei muita saúde com o Deusmar! - Ana S."</p>
+        <img src="https://via.placeholder.com/100x100?text=Logo" alt="Logo" className="logo" style={{ marginBottom: '20px' }} />
+        <p>
+          Mais que um personal trainer, sou um arquiteto de transformações. Com anos de experiência internacional e uma metodologia baseada em dados precisos, desenvolvo estratégias personalizadas que transcendem os limites convencionais do fitness.
+        </p>
+        <p>
+          Minha filosofia combina ciência, tecnologia e dedicação absoluta para entregar resultados mensuráveis e duradouros, independentemente de onde você esteja no mundo.
+        </p>
+        <div className="stats-container">
+          <div className="stat-item">
+            <h3>200+</h3>
+            <p>transformações</p>
+          </div>
+          <div className="stat-item">
+            <h3>7+</h3>
+            <p>países atendidos</p>
+          </div>
         </div>
       </div>
     </section>

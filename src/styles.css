@@ -8,6 +8,10 @@
     --color-dark-red: #380B0D; /* Uma variação do vermelho para blocos */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Estilos Gerais */
 body {
     font-family: 'Poppins', sans-serif;
@@ -194,7 +198,7 @@ section:nth-of-type(even) {
 }
 
 .info-block {
-    background-color: var(--color-dark-red);
+    background-color: var(--color-primary);
     padding: 50px;
     border-radius: 12px;
     max-width: 550px;
@@ -206,12 +210,29 @@ section:nth-of-type(even) {
     background-color: var(--color-dark-red);
 }
 
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
 .app-mockup {
-    margin-top: 30px;
+    margin: 30px auto 0;
+    display: block;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    display: inline-block; /* Para alinhar melhor a imagem */
 }
 
 .app-image {
