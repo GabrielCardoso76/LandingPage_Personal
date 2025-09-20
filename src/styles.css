@@ -340,8 +340,12 @@ section:nth-of-type(even) {
 
 .video-placeholder-image {
     width: 100%;
+    max-width: 400px; /* Limita a largura máxima da imagem */
     height: auto;
     display: block;
+    margin: 0 auto; /* Centraliza a imagem se o container for mais largo */
+    border-radius: 15px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra suave */
 }
 
 .features-grid {

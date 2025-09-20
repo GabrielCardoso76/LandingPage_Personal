@@ -16,7 +16,7 @@ const Header = () => {
       <div className="hero-content">
         <div className="hero-layout">
           <div className="hero-text-content">
-            <img src={logo} alt="Deusmar Personal Trainer" style={{ width: '300px', marginBottom: '20px' }}/>
+            <img src={logo} alt="Deusmar Personal Trainer" style={{ width: '450px', marginBottom: '20px' }}/>
             <div className="subtitle">
               <span>Transforme</span>
               <RotatingText
