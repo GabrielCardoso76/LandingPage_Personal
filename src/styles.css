@@ -65,8 +65,8 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 30%, rgba(181, 11, 16, 0.25) 0%, rgba(181, 11, 16, 0) 70%);
-    filter: blur(120px);
+    background: radial-gradient(circle at 50% 30%, rgba(181, 11, 16, 0.35) 0%, rgba(181, 11, 16, 0) 70%);
+    filter: blur(130px);
     z-index: -1;
     pointer-events: none;
 }
@@ -145,14 +145,9 @@ p {
 .hero-layout {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza os itens */
     width: 100%;
-    gap: 20px;
-}
-
-.hero-layout::before {
-    content: '';
-    flex-basis: 25%;
+    gap: 80px; /* Aumenta o espaço entre o texto e o card */
 }
 
 .hero-text-content {
