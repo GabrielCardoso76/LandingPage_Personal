@@ -77,9 +77,11 @@ function App() {
 
   return (
     <>
-      <Header />
-      <main>
+      <div className="glow-container">
+        <Header />
         <InfoBlocksSection />
+      </div>
+      <main>
         <AppTourSection />
         <ResultsSection />
         <PricingSection />
