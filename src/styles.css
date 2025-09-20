@@ -148,6 +148,7 @@ p {
     justify-content: center; /* Centraliza os itens */
     width: 100%;
     gap: 80px; /* Aumenta o espaço entre o texto e o card */
+    padding-left: 10%; /* Desloca o conteúdo para a direita */
 }
 
 .hero-text-content {
