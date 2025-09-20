@@ -13,7 +13,7 @@ const InfoBlocksSection = () => {
         </div>
       </div>
       <div className="info-block dedication-block scroll-animate slide-right">
-        <img src={logo} alt="Logo" className="logo" style={{ marginBottom: '20px', width: '150px' }} />
+        <img src={logo} alt="Logo" className="logo" style={{ marginBottom: '20px', width: '490px' }} />
         <p>
           Mais que um personal trainer, sou um arquiteto de transformações. Com anos de experiência internacional e uma metodologia baseada em dados precisos, desenvolvo estratégias personalizadas que transcendem os limites convencionais do fitness.
         </p>
