@@ -13,12 +13,6 @@ const Header = () => {
 
   return (
     <header className="hero-section">
-      <div className="header-container">
-        <div className="logo-container">
-          <img src={logoUrl} alt="Logo DPJ Personal Trainer" className="logo" />
-          <span className="logo-text">PERSONAL TRAINER</span>
-        </div>
-      </div>
       <div className="hero-content">
         <div className="hero-layout">
           <div className="hero-text-content">

@@ -8,10 +8,6 @@
     --color-dark-red: #380B0D; /* Uma variação do vermelho para blocos */
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 /* Estilos Gerais */
 body {
     font-family: 'Poppins', sans-serif;
@@ -236,8 +232,8 @@ section:nth-of-type(even) {
 }
 
 .app-image {
-    width: 250px; /* Tamanho da imagem do mockup */
-    height: 500px; /* Altura da imagem do mockup */
+    width: 250px; /* Largura para manter o layout */
+    height: 445px; /* Altura para proporção 9:16 (1080x1920) */
     object-fit: cover;
     display: block;
 }

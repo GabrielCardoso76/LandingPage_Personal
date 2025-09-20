@@ -12,6 +12,31 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
+    // Smooth scrolling for anchor links
+    const handleSmoothScroll = (e) => {
+      const href = e.currentTarget.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => link.addEventListener('click', handleSmoothScroll));
+
+    // Cleanup for smooth scroll listeners
+    return () => {
+      anchorLinks.forEach(link => link.removeEventListener('click', handleSmoothScroll));
+    };
+  }, []); // Run only once on mount
+
+  useEffect(() => {
     // This logic is adapted from the original animations.js file
     const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
 

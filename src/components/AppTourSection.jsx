@@ -13,12 +13,12 @@ const AppTourSection = () => {
           <h3>Treinos Personalizados</h3>
         </div>
         <div className="feature-item scroll-animate slide-up delay-1">
-          <img src="https://img.icons8.com/ios-filled/50/B50B10/increase-graph.png" alt="Ícone de Gráfico" className="feature-icon" />
+          <img src="https://img.icons8.com/ios-filled/50/B50B10/combo-chart.png" alt="Ícone de Gráfico" className="feature-icon" />
           <h3>Acompanhamento de Progresso</h3>
         </div>
         <div className="feature-item scroll-animate slide-up delay-2">
-          <img src="https://img.icons8.com/ios-filled/50/B50B10/healthy-food.png" alt="Ícone de Comida Saudável" className="feature-icon" />
-          <h3>Planos de Dieta</h3>
+          <img src="https://img.icons8.com/ios-filled/50/B50B10/chat.png" alt="Ícone de Suporte" className="feature-icon" />
+          <h3>Suporte 24/7</h3>
         </div>
       </div>
     </section>
