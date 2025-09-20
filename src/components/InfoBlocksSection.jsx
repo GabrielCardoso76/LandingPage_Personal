@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/logo.png';
+import appMockupImage from '../assets/playstoryapp.png';
 
 const InfoBlocksSection = () => {
   return (
@@ -8,7 +9,7 @@ const InfoBlocksSection = () => {
         <h2>Seu Treino na Palma da Mão</h2>
         <p>App Exclusivo Lançamento em Breve! Acompanhamento Completo, Treinos Personalizados, Metas e Mais. Tudo o que você precisa para alcançar seus resultados.</p>
         <div className="app-mockup">
-          <img src="https://via.placeholder.com/250x500/000000/FFFFFF?text=App+Mockup" alt="Mockup do Aplicativo" className="app-image" />
+          <img src={appMockupImage} alt="Mockup do Aplicativo" className="app-image" />
         </div>
       </div>
       <div className="info-block dedication-block scroll-animate slide-right">

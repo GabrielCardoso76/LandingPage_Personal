@@ -97,6 +97,11 @@ p {
     height: auto;
 }
 
+.hero-logo {
+    width: 450px;
+    margin-bottom: 20px;
+}
+
 .logo-text {
     font-size: 1.4rem;
     font-weight: 600;
@@ -233,8 +238,8 @@ section:nth-of-type(even) {
 
 .app-image {
     width: 250px; /* Largura para manter o layout */
-    height: 445px; /* Altura para proporção 9:16 (1080x1920) */
-    object-fit: cover;
+    height: auto; /* Altura para proporção 9:16 (1080x1920) */
+    object-fit: contain;
     display: block;
 }
 
@@ -769,6 +774,9 @@ section:nth-of-type(even) {
     .subtitle { font-size: 1rem; }
     .hero-section { padding: 80px 20px; min-height: 80vh; }
     .logo { width: 70px; }
+    .hero-logo {
+        width: 300px;
+    }
     .logo-text { font-size: 1rem; }
     .cta-button { padding: 15px 25px; font-size: 0.9rem; }
     section { padding: 60px 20px; }
@@ -780,7 +788,7 @@ section:nth-of-type(even) {
     .info-block, .feature-item, .result-card, .pricing-card, .cta-form {
         max-width: 100%;
     }
-    .app-image { width: 200px; height: 400px; }
+    .app-image { width: 200px; }
     .testimonial { flex-direction: column; text-align: center; }
     .testimonial-photo { margin-right: 0; margin-bottom: 15px; }
     .video-container { height: 300px; }
