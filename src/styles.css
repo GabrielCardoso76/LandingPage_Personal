@@ -75,6 +75,20 @@ p {
     z-index: 1;
 }
 
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -25%; /* Posiciona parcialmente abaixo para um efeito de 'subida' */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(181, 11, 16, 0.4) 0%, rgba(181, 11, 16, 0) 60%);
+    filter: blur(100px);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .header-container {
     position: absolute; /* Posiciona a logo no topo */
     top: 30px;
