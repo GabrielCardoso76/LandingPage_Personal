@@ -1,9 +1,0 @@
-.scroll-reveal-container {
-  display: block;
-}
-
-.word {
-  display: inline-block;
-  /* Adding this will-change hint can help performance for animations */
-  will-change: transform, opacity, filter;
-}
