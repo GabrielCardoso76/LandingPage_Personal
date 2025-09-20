@@ -53,7 +53,7 @@ p {
 /* Header (Seção Hero) */
 .hero-section {
     background: url('https://via.placeholder.com/1920x1080/000000/3A3A3A?text=Hero+Background') no-repeat center center/cover;
-    padding: 150px 50px;
+    padding: 100px 50px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -340,8 +340,12 @@ section:nth-of-type(even) {
 
 .video-placeholder-image {
     width: 100%;
+    max-width: 400px; /* Limita a largura máxima da imagem */
     height: auto;
     display: block;
+    margin: 0 auto; /* Centraliza a imagem se o container for mais largo */
+    border-radius: 15px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra suave */
 }
 
 .features-grid {
@@ -369,78 +373,195 @@ section:nth-of-type(even) {
     display: block; /* Para centralizar */
 }
 
-/* Seções de Benefícios e Depoimentos */
-.benefits-section {
+/* Seção de Resultados (antiga Benefits) */
+.results-section {
     background-color: var(--color-gray);
 }
 
-.benefits-grid {
+.results-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
 }
 
-.benefit-item {
+.result-card {
     background-color: var(--color-dark-red);
-    padding: 40px;
+    padding: 30px;
     border-radius: 12px;
     max-width: 350px;
+    text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     transition: transform 0.3s ease;
 }
 
-.benefit-item:hover {
+.result-card:hover {
     transform: translateY(-10px);
 }
 
-.benefit-icon {
-    width: 60px;
-    height: 60px;
+.result-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid var(--color-primary);
+}
+
+.result-card-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--color-white);
+}
+
+.result-city {
+    color: #ccc;
+    font-size: 0.9rem;
     margin-bottom: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.benefits-item h3 {
+.result-highlight {
+    color: var(--color-primary);
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
-.testimonials-section {
+.result-quote {
+    font-style: italic;
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+.pricing-section {
     background-color: var(--color-black);
 }
 
-.testimonials-grid {
+.pricing-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch; /* Alinha os cards na parte superior */
     gap: 40px;
 }
 
-.testimonial-card {
+.pricing-card {
     background-color: var(--color-gray);
     padding: 40px;
     border-radius: 12px;
     max-width: 380px;
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid transparent;
+}
+
+.pricing-card.highlight {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(181, 11, 16, 0.4);
+    border-color: var(--color-primary);
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--color-white);
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    text-align: left;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.check-icon {
+    flex-shrink: 0; /* Impede que o ícone seja espremido */
+}
+
+.pricing-card .cta-button {
+    width: 100%;
+    margin-top: auto; /* Empurra o botão para o final do card */
+}
+
+/* Seção de FAQ */
+.faq-section {
+    background-color: var(--color-gray);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    border-top: 1px solid #4a4a4a;
+}
+
+.faq-item {
+    border-bottom: 1px solid #4a4a4a;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.faq-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
     transition: transform 0.3s ease;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-10px);
+.faq-item.open .faq-icon {
+    transform: rotate(180deg);
 }
 
-.testimonial-photo-small {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 20px;
-    border: 2px solid var(--color-primary);
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease;
+    padding: 0 10px;
 }
+
+.faq-answer p {
+    margin: 0;
+    padding-top: 20px;
+    color: #ccc;
+    text-align: left;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px; /* Altura suficiente para a resposta */
+    padding: 0 10px;
+}
+
 
 /* Formulário de Contato */
 .cta-form-section {
@@ -466,7 +587,7 @@ section:nth-of-type(even) {
     width: calc(100% - 30px); /* Ajuste para o padding */
     padding: 18px 15px;
     border-radius: 8px;
-    border: none;
+    border: 1px solid #555; /* Borda sutil para visibilidade */
     background-color: rgba(0,0,0,0.4); /* Fundo mais escuro para os inputs */
     color: var(--color-white);
     font-size: 1.1rem;
@@ -488,34 +609,84 @@ section:nth-of-type(even) {
     margin-top: 20px;
 }
 
-/* Rodapé (Footer) */
-footer {
-    background-color: var(--color-black);
+.form-buttons-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* Cor do WhatsApp */
     text-align: center;
-    padding: 50px 20px;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+
+/* Rodapé (Footer) */
+.main-footer {
+    background-color: var(--color-black);
+    padding: 40px 50px 20px;
     border-top: 1px solid #1c1c1c;
     color: #a0a0a0;
 }
 
-footer a {
-    color: #a0a0a0;
-}
-
-.social-icons {
+.footer-top {
     display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
+    justify-content: flex-end; /* Alinha itens à direita */
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
-.social-icon {
-    width: 35px;
-    height: 35px;
-    transition: transform 0.3s ease;
+.footer-logo {
+    width: 150px; /* Tamanho médio */
+    height: auto;
 }
 
-.social-icon:hover {
-    transform: translateY(-5px) scale(1.1);
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: var(--color-white);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.social-icon-svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Cores de hover específicas da marca */
+.social-link.instagram:hover { color: #E4405F; }
+.social-link.facebook:hover { color: #1877F2; }
+.social-link.whatsapp:hover { color: #25D366; }
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: #333; /* Linha cinza */
+    margin: 0 20px; /* Espaçamento das bordas */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    color: #a0a0a0;
+    text-decoration: underline;
 }
 
 
@@ -547,12 +718,10 @@ footer a {
 }
 
 .scroll-animate.flip-in {
-    transform: perspective(400px) rotateY(0deg);
-    opacity: 1;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.scroll-animate.flip-in {
     transform: perspective(400px) rotateY(-90deg); /* Posição inicial */
+}
+.scroll-animate.fade-in.flip-in {
+    transform: perspective(400px) rotateY(0);
 }
 
 .scroll-animate.scale-in {
@@ -587,7 +756,7 @@ footer a {
     h2 { font-size: 2rem; }
     .subtitle { font-size: 1.2rem; }
     .hero-section { padding: 100px 30px; }
-    .info-block, .feature-item, .benefit-item, .testimonial-card {
+    .info-block, .feature-item, .result-card, .pricing-card {
         padding: 30px;
         max-width: 450px;
     }
@@ -603,12 +772,12 @@ footer a {
     .logo-text { font-size: 1rem; }
     .cta-button { padding: 15px 25px; font-size: 0.9rem; }
     section { padding: 60px 20px; }
-    .info-blocks-section, .features-grid, .benefits-grid, .testimonials-grid {
+    .info-blocks-section, .features-grid, .results-grid, .pricing-grid {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
-    .info-block, .feature-item, .benefit-item, .testimonial-card, .cta-form {
+    .info-block, .feature-item, .result-card, .pricing-card, .cta-form {
         max-width: 100%;
     }
     .app-image { width: 200px; height: 400px; }

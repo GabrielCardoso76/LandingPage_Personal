@@ -9,7 +9,12 @@ const CtaFormSection = () => {
         <input type="text" placeholder="Seu Nome Completo" required />
         <input type="email" placeholder="Seu Melhor E-mail" required />
         <input type="tel" placeholder="Seu WhatsApp" required />
-        <button type="submit" className="cta-button">QUERO COMEÇAR AGORA!</button>
+        <div className="form-buttons-container">
+          <button type="submit" className="cta-button">QUERO COMEÇAR AGORA!</button>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="cta-button whatsapp-button">
+            OU FALE NO WHATSAPP
+          </a>
+        </div>
       </form>
     </section>
   );

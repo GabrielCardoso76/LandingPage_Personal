@@ -4,8 +4,8 @@ import './styles.css';
 import Header from './components/Header';
 import InfoBlocksSection from './components/InfoBlocksSection';
 import AppTourSection from './components/AppTourSection';
-import BenefitsSection from './components/BenefitsSection';
-import TestimonialsSection from './components/TestimonialsSection';
+import ResultsSection from './components/ResultsSection';
+import PricingSection from './components/PricingSection';
 import CtaFormSection from './components/CtaFormSection';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
@@ -81,8 +81,8 @@ function App() {
       <main>
         <InfoBlocksSection />
         <AppTourSection />
-        <BenefitsSection />
-        <TestimonialsSection />
+        <ResultsSection />
+        <PricingSection />
         <CtaFormSection />
         <FaqSection />
       </main>
