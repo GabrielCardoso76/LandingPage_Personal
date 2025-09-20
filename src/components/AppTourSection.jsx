@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import imagemProgresso from '../assets/informacoes.jpeg';
+import imagemAvaliacoes from '../assets/inicial.jpeg';
+import imagemSupervisao from '../assets/postural.jpeg';
 
 const features = [
   {
     title: "Acompanhe seu progresso",
     description: "Insira cargas e repetições a cada treino e veja sua evolução em gráficos detalhados.",
-    image: "https://via.placeholder.com/400x600?text=Progresso+GIF"
+    image: "imagemAvaliacoes"
   },
   {
     title: "Avaliações sempre com você",
