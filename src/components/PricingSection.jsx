@@ -52,7 +52,7 @@ const plansData = [
   }
 ];
 
-const TestimonialsSection = () => {
+const PricingSection = () => {
   return (
     <section className="pricing-section">
       <h2 className="scroll-animate fade-in">Escolha o plano da sua transformação</h2>
@@ -77,4 +77,4 @@ const TestimonialsSection = () => {
   );
 };
 
-export default TestimonialsSection;
+export default PricingSection;

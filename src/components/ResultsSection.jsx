@@ -24,7 +24,7 @@ const testimonialsData = [
   }
 ];
 
-const BenefitsSection = () => {
+const ResultsSection = () => {
   return (
     <section className="results-section">
       <h2 className="scroll-animate fade-in">Resultados que falam por si</h2>
@@ -45,4 +45,4 @@ const BenefitsSection = () => {
   );
 };
 
-export default BenefitsSection;
+export default ResultsSection;

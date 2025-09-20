@@ -504,6 +504,64 @@ section:nth-of-type(even) {
     margin-top: auto; /* Empurra o botão para o final do card */
 }
 
+/* Seção de FAQ */
+.faq-section {
+    background-color: var(--color-gray);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    border-top: 1px solid #4a4a4a;
+}
+
+.faq-item {
+    border-bottom: 1px solid #4a4a4a;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.faq-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease;
+    padding: 0 10px;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding-top: 20px;
+    color: #ccc;
+    text-align: left;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px; /* Altura suficiente para a resposta */
+    padding: 0 10px;
+}
+
 
 /* Formulário de Contato */
 .cta-form-section {
@@ -529,7 +587,7 @@ section:nth-of-type(even) {
     width: calc(100% - 30px); /* Ajuste para o padding */
     padding: 18px 15px;
     border-radius: 8px;
-    border: none;
+    border: 1px solid #555; /* Borda sutil para visibilidade */
     background-color: rgba(0,0,0,0.4); /* Fundo mais escuro para os inputs */
     color: var(--color-white);
     font-size: 1.1rem;
@@ -551,34 +609,84 @@ section:nth-of-type(even) {
     margin-top: 20px;
 }
 
-/* Rodapé (Footer) */
-footer {
-    background-color: var(--color-black);
+.form-buttons-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* Cor do WhatsApp */
     text-align: center;
-    padding: 50px 20px;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+
+/* Rodapé (Footer) */
+.main-footer {
+    background-color: var(--color-black);
+    padding: 40px 50px 20px;
     border-top: 1px solid #1c1c1c;
     color: #a0a0a0;
 }
 
-footer a {
-    color: #a0a0a0;
-}
-
-.social-icons {
+.footer-top {
     display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
+    justify-content: flex-end; /* Alinha itens à direita */
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
-.social-icon {
-    width: 35px;
-    height: 35px;
-    transition: transform 0.3s ease;
+.footer-logo {
+    width: 150px; /* Tamanho médio */
+    height: auto;
 }
 
-.social-icon:hover {
-    transform: translateY(-5px) scale(1.1);
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: var(--color-white);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.social-icon-svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Cores de hover específicas da marca */
+.social-link.instagram:hover { color: #E4405F; }
+.social-link.facebook:hover { color: #1877F2; }
+.social-link.whatsapp:hover { color: #25D366; }
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: #333; /* Linha cinza */
+    margin: 0 20px; /* Espaçamento das bordas */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    color: #a0a0a0;
+    text-decoration: underline;
 }
 
 
@@ -610,12 +718,10 @@ footer a {
 }
 
 .scroll-animate.flip-in {
-    transform: perspective(400px) rotateY(0deg);
-    opacity: 1;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.scroll-animate.flip-in {
     transform: perspective(400px) rotateY(-90deg); /* Posição inicial */
+}
+.scroll-animate.fade-in.flip-in {
+    transform: perspective(400px) rotateY(0);
 }
 
 .scroll-animate.scale-in {
@@ -650,7 +756,7 @@ footer a {
     h2 { font-size: 2rem; }
     .subtitle { font-size: 1.2rem; }
     .hero-section { padding: 100px 30px; }
-    .info-block, .feature-item, .benefit-item, .testimonial-card {
+    .info-block, .feature-item, .result-card, .pricing-card {
         padding: 30px;
         max-width: 450px;
     }
@@ -666,12 +772,12 @@ footer a {
     .logo-text { font-size: 1rem; }
     .cta-button { padding: 15px 25px; font-size: 0.9rem; }
     section { padding: 60px 20px; }
-    .info-blocks-section, .features-grid, .benefits-grid, .testimonials-grid {
+    .info-blocks-section, .features-grid, .results-grid, .pricing-grid {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
-    .info-block, .feature-item, .benefit-item, .testimonial-card, .cta-form {
+    .info-block, .feature-item, .result-card, .pricing-card, .cta-form {
         max-width: 100%;
     }
     .app-image { width: 200px; height: 400px; }
