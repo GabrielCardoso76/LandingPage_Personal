@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiUser, FiSmartphone, FiStar } from 'react-icons/fi'; // Importando ícones
 import StarBorder from './StarBorder';
 import CardSwap, { Card } from './CardSwap';
 import RotatingText from './RotatingText';
@@ -36,9 +37,9 @@ const Header = () => {
           </div>
           <div className="hero-card-swap">
             <CardSwap width={600} height={480}>
-              <Card><h3>Sobre o Deusmar</h3></Card>
-              <Card><h3>Sobre o APP</h3></Card>
-              <Card><h3>Avaliações de outros alunos</h3></Card>
+              <Card><h3><FiUser /> <span>Sobre o Deusmar</span></h3></Card>
+              <Card><h3><FiSmartphone /> <span>Sobre o APP</span></h3></Card>
+              <Card><h3><FiStar /> <span>Avaliações de outros alunos</span></h3></Card>
             </CardSwap>
           </div>
         </div>
