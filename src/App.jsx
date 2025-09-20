@@ -12,12 +12,12 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    // Smooth scrolling for anchor links
+    // Event delegation for smooth scrolling
     const handleSmoothScroll = (e) => {
-      const href = e.currentTarget.getAttribute('href');
-      if (href.startsWith('#')) {
+      const link = e.target.closest('a[href^="#"]');
+      if (link) {
         e.preventDefault();
-        const targetId = href.substring(1);
+        const targetId = link.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({
@@ -27,12 +27,10 @@ function App() {
       }
     };
 
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => link.addEventListener('click', handleSmoothScroll));
+    document.addEventListener('click', handleSmoothScroll);
 
-    // Cleanup for smooth scroll listeners
     return () => {
-      anchorLinks.forEach(link => link.removeEventListener('click', handleSmoothScroll));
+      document.removeEventListener('click', handleSmoothScroll);
     };
   }, []); // Run only once on mount
 

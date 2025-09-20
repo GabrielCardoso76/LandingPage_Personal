@@ -25,7 +25,7 @@ const Header = () => {
                 splitBy="words"
               />
             </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '20px', flexWrap: 'wrap', marginTop: '40px' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '20px', flexWrap: 'wrap', marginTop: '20px' }}>
               <StarBorder as="a" href="#app-tour-section" color="red" speed="4s">
                 QUERO SABER MAIS
               </StarBorder>
