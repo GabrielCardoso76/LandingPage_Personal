@@ -69,7 +69,6 @@ const AppTourSection = () => {
               className={`app-tour-feature-item card-variant-${feature.variant} ${index === activeIndex ? 'active' : ''}`}
               onClick={() => handleCardClick(index)}
             >
-              {feature.variant === 'red' && <span className="card-bg-text">Avaliações</span>}
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </div>
