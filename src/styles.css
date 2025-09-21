@@ -352,24 +352,6 @@ section:nth-of-type(even) {
     animation: subtle-glow-move 12s ease-in-out infinite;
 }
 
-.background-text-container {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: rgba(181, 11, 16, 0.2);
-    font-weight: 700;
-    z-index: 2;
-    line-height: 1;
-    user-select: none;
-}
-
-.background-text-item {
-    display: block;
-}
-
-.background-text-item:nth-child(1) { font-size: 12rem; }
-.background-text-item:nth-child(2) { font-size: 8rem; }
-.background-text-item:nth-child(3) { font-size: 5rem; }
 
 
 .app-tour-section h2 {
@@ -470,21 +452,6 @@ section:nth-of-type(even) {
     z-index: 5; /* Ensure cards are on top of lines */
 }
 
-.connecting-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.connecting-lines line {
-    stroke: var(--color-primary);
-    stroke-width: 2px;
-    stroke-linecap: round;
-    opacity: 0.3;
-}
 
 @keyframes progress-bar {
     from { width: 0; }

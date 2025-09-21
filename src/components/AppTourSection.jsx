@@ -32,7 +32,7 @@ const AppTourSection = () => {
       setActiveIndex((current) => (current + 1) % features.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [activeIndex]);
+  }, []);
 
   const handleCardClick = (index) => {
     setActiveIndex(index);
@@ -40,12 +40,6 @@ const AppTourSection = () => {
 
   return (
     <section id="app-tour-section" className="app-tour-section">
-      <div className="background-text-container">
-        <span className="background-text-item">Aplicativo</span>
-        <span className="background-text-item">App</span>
-        <span className="background-text-item">Apli</span>
-      </div>
-
       <h2 className="scroll-animate fade-in">A revolução do seu treino na palma da mão</h2>
 
       <div className="app-tour-layout">
@@ -67,12 +61,6 @@ const AppTourSection = () => {
             </div>
           </div>
         </div>
-
-        <svg className="connecting-lines" viewBox="0 0 1000 650" preserveAspectRatio="none">
-          <line x1="600" y1="130" x2="480" y2="230" />
-          <line x1="600" y1="325" x2="480" y2="325" />
-          <line x1="600" y1="520" x2="480" y2="420" />
-        </svg>
 
         <div className="app-tour-features" key={activeIndex}>
           {features.map((feature, index) => (
