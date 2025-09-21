@@ -228,6 +228,9 @@ section:nth-of-type(even) {
     max-width: 550px;
     text-align: left;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .dedication-block {
@@ -260,10 +263,11 @@ section:nth-of-type(even) {
 }
 
 .app-image {
-    width: 250px; /* Largura para manter o layout */
+    width: 300px; /* Largura para manter o layout */
     height: auto; /* Altura para proporção 9:16 (1080x1920) */
     object-fit: contain;
     display: block;
+    margin: 0 auto;
 }
 
 .testimonial {
