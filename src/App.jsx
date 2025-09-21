@@ -39,9 +39,9 @@ function App() {
       const glowContainer = document.querySelector('.glow-container');
       if (glowContainer) {
         const scrollY = window.scrollY;
-        // Adjust the multiplier to control the speed of the glow movement
-        const glowYPercent = 30 + (scrollY * 0.1);
-        glowContainer.style.setProperty('--glow-y', `${glowYPercent}%`);
+        // This will move the glow down as the user scrolls down
+        const glowYOffset = scrollY * 0.5; // Adjust multiplier for speed
+        glowContainer.style.setProperty('--glow-y-offset', `${glowYOffset}px`);
       }
     };
 
