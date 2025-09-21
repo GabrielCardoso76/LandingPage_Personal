@@ -20,6 +20,12 @@ const InfoBlocksSection = () => {
         <p>
           Minha filosofia combina ciência, tecnologia e dedicação absoluta para entregar resultados mensuráveis e duradouros, independentemente de onde você esteja no mundo.
         </p>
+        <p>
+          <strong>Resultados Comprovados e Duradouros:</strong> A estética é consequência de um trabalho bem-feito. Meu foco está em construir um corpo forte, funcional e resiliente. As transformações que você vê são fruto de uma parceria sólida e de um método que respeita sua individualidade, garantindo que os resultados alcançados sejam sustentáveis a longo prazo.
+        </p>
+        <p>
+          <strong>Suporte Contínuo e Personalizado:</strong> Sua jornada é minha prioridade. Ofereço um acompanhamento próximo e constante, garantindo que você tenha o suporte necessário para superar desafios e se manter motivado. Estou sempre disponível para tirar dúvidas, ajustar seu plano e celebrar cada conquista ao seu lado.
+        </p>
         <div className="stats-container">
           <div className="stat-item">
             <h3>200+</h3>
