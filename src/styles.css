@@ -58,22 +58,30 @@ p {
     z-index: 0;
 }
 
+.glow-container {
+    position: relative;
+    z-index: 0;
+    overflow: hidden; /* Contain the glow */
+    --glow-y-offset: 0px; /* JS will control this */
+}
+
 .glow-container::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -50%; /* Start higher to allow for movement */
     left: 0;
     width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 30%, rgba(181, 11, 16, 0.35) 0%, rgba(181, 11, 16, 0) 70%);
-    filter: blur(130px);
+    height: 200%; /* Make it tall enough to move */
+    background: radial-gradient(circle at 50% 50%, rgba(181, 11, 16, 0.9) 0%, rgba(181, 11, 16, 0) 50%);
+    filter: blur(90px);
     z-index: -1;
     pointer-events: none;
+    transform: translateY(var(--glow-y-offset));
+    transition: transform 0.3s ease-out;
 }
 
 /* Header (Seção Hero) */
 .hero-section {
-    background: url('https://via.placeholder.com/1920x1080/000000/3A3A3A?text=Hero+Background') no-repeat center center/cover;
     padding: clamp(80px, 10vh, 120px) clamp(20px, 5vw, 50px);
     text-align: center;
     position: relative;
@@ -218,7 +226,7 @@ section:nth-of-type(even) {
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    background-color: var(--color-gray);
+    background-color: transparent; /* Changed from var(--color-gray) */
 }
 
 .info-block {
@@ -228,6 +236,9 @@ section:nth-of-type(even) {
     max-width: 550px;
     text-align: left;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .dedication-block {
@@ -260,10 +271,11 @@ section:nth-of-type(even) {
 }
 
 .app-image {
-    width: 250px; /* Largura para manter o layout */
+    width: 300px; /* Largura para manter o layout */
     height: auto; /* Altura para proporção 9:16 (1080x1920) */
     object-fit: contain;
     display: block;
+    margin: 0 auto;
 }
 
 .testimonial {
@@ -294,48 +306,167 @@ section:nth-of-type(even) {
 
 /* Seção de Tour pelo App */
 .app-tour-section {
-    background: linear-gradient(to top right, #1F1F1F, var(--color-primary));
+    background-color: #111111; /* Cor de fundo escura */
+    position: relative;
+    padding: 120px 50px;
+    overflow: hidden;
 }
 
+@keyframes subtle-glow-move {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(20px, 30px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.app-tour-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(181, 11, 16, 0.35) 0%, rgba(181, 11, 16, 0) 70%);
+    transform: translate(-50%, -50%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.app-tour-section::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -300px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(181, 11, 16, 0.3) 0%, rgba(181, 11, 16, 0) 70%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+    animation: subtle-glow-move 12s ease-in-out infinite;
+}
+
+
+
 .app-tour-section h2 {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 3;
+}
+
+/* Phone Mockup Styles */
+.phone-mockup-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.phone-mockup {
+    position: relative;
+    transform: rotateY(15deg) rotateX(5deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.phone-mockup:hover {
+    transform: rotateY(0deg) rotateX(0deg);
+}
+
+.phone-frame {
+    width: 300px;
+    height: 620px;
+    background-color: #1a1a1a;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4),
+                inset 0 0 0 2px #333,
+                inset 0 0 10px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.phone-screen {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.app-screenshot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.app-screenshot.visible {
+    opacity: 1;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 25px;
+    background-color: #1a1a1a;
+    border-radius: 0 0 15px 15px;
+    z-index: 10;
 }
 
 .app-tour-layout {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 50px;
-    margin-top: 60px;
+    gap: 120px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    position: relative;
+    z-index: 3;
 }
 
-.app-tour-image-container {
-    flex: 1;
-    /* Adicionar estilos para o GIF/imagem aqui */
+.phone-mockup-container {
+    flex-shrink: 0;
 }
 
 .app-tour-features {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+    max-width: 400px; /* Limit width of cards container */
+    z-index: 5; /* Ensure cards are on top of lines */
+}
+
+
+@keyframes progress-bar {
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 .app-tour-feature-item {
-    padding: 20px;
-    border-radius: 12px;
+    padding: 25px 30px;
+    border-radius: 25px;
     cursor: pointer;
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: background-color 0.3s ease;
-}
-
-.app-tour-feature-item:hover, .app-tour-feature-item.active {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.app-tour-feature-item {
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
-    overflow: hidden; /* To contain the pseudo-element */
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .app-tour-feature-item::after {
@@ -346,16 +477,37 @@ section:nth-of-type(even) {
     height: 4px;
     width: 0;
     background-color: var(--color-primary);
-    transition: width 0.3s ease; /* For click transition */
+    opacity: 0.6;
+}
+
+.app-tour-feature-item.active {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 .app-tour-feature-item.active::after {
-    width: 100%;
-    transition: width 5s linear; /* 5s animation for auto-cycle */
+    animation: progress-bar 5s linear forwards;
+}
+
+.app-tour-feature-item.card-variant-white {
+    background-color: var(--color-white);
+    color: var(--color-gray);
+}
+
+.app-tour-feature-item.card-variant-red {
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .app-tour-feature-item h3 {
     margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.app-tour-feature-item h3,
+.app-tour-feature-item p {
+    position: relative;
+    z-index: 2;
 }
 
 .video-container {
@@ -789,6 +941,22 @@ section:nth-of-type(even) {
         max-width: 450px;
     }
     .video-container { height: 400px; }
+
+    /* App Tour Responsive */
+    .app-tour-layout {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .connecting-lines {
+        display: none;
+    }
+    .phone-mockup {
+        transform: none; /* Remove 3D effect */
+    }
+    .app-tour-features {
+        max-width: 500px;
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -816,6 +984,18 @@ section:nth-of-type(even) {
     .testimonial-photo { margin-right: 0; margin-bottom: 15px; }
     .video-container { height: 300px; }
     .feature-icon, .benefit-icon { width: 50px; height: 50px; }
+
+    /* App Tour Responsive */
+    .app-tour-section {
+        padding: 60px 20px;
+    }
+    .phone-frame {
+        width: 260px;
+        height: 540px;
+    }
+    .background-text-item:nth-child(1) { font-size: 8rem; }
+    .background-text-item:nth-child(2) { font-size: 5rem; }
+    .background-text-item:nth-child(3) { font-size: 3rem; }
 }
 
 @media (min-width: 1600px) {
