@@ -72,8 +72,8 @@ p {
     left: 0;
     width: 100%;
     height: 200%; /* Make it tall enough to move */
-    background: radial-gradient(circle at 50% 50%, rgba(181, 11, 16, 0.75) 0%, rgba(181, 11, 16, 0) 70%);
-    filter: blur(130px);
+    background: radial-gradient(circle at 50% 50%, rgba(181, 11, 16, 0.9) 0%, rgba(181, 11, 16, 0) 50%);
+    filter: blur(90px);
     z-index: -1;
     pointer-events: none;
     transform: translateY(var(--glow-y-offset));
@@ -226,7 +226,7 @@ section:nth-of-type(even) {
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    background-color: var(--color-gray);
+    background-color: transparent; /* Changed from var(--color-gray) */
 }
 
 .info-block {
