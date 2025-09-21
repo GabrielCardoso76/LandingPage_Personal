@@ -35,6 +35,24 @@ function App() {
   }, []); // Run only once on mount
 
   useEffect(() => {
+    const handleGlowScroll = () => {
+      const glowContainer = document.querySelector('.glow-container');
+      if (glowContainer) {
+        const scrollY = window.scrollY;
+        // Adjust the multiplier to control the speed of the glow movement
+        const glowYPercent = 30 + (scrollY * 0.1);
+        glowContainer.style.setProperty('--glow-y', `${glowYPercent}%`);
+      }
+    };
+
+    window.addEventListener('scroll', handleGlowScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleGlowScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     // This logic is adapted from the original animations.js file
     const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
 
