@@ -5,7 +5,6 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-gray: #3A3A3A;
-    --color-dark-red: #380B0D; /* Uma variação do vermelho para blocos */
 }
 
 /* Estilos Gerais */
@@ -242,7 +241,7 @@ section:nth-of-type(even) {
 }
 
 .dedication-block {
-    background-color: var(--color-dark-red);
+    background-color: var(--color-gray);
 }
 
 .stats-container {
@@ -566,17 +565,18 @@ section:nth-of-type(even) {
 }
 
 .result-card {
-    background-color: var(--color-dark-red);
+    background-color: var(--color-gray);
     padding: 30px;
     border-radius: 12px;
     max-width: 350px;
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .result-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.5);
 }
 
 .result-photo {
@@ -641,7 +641,7 @@ section:nth-of-type(even) {
     border: 2px solid transparent;
 }
 
-.pricing-card.highlight {
+.pricing-card:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 40px rgba(181, 11, 16, 0.4);
     border-color: var(--color-primary);
@@ -745,13 +745,37 @@ section:nth-of-type(even) {
 
 /* Formulário de Contato */
 .cta-form-section {
-    background-color: var(--color-dark-red);
-    padding-bottom: 120px; /* Mais espaço para o botão */
+    background-color: var(--color-gray);
+    padding: 120px 50px;
+}
+
+.cta-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-text-content {
+    max-width: 750px;
+}
+
+.cta-form-section h2 {
+    margin-bottom: 20px;
 }
 
 .cta-form-section p {
     font-size: 1.2rem;
-    margin-bottom: 40px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.cta-form-wrapper {
+    width: 100%;
+    max-width: 550px;
 }
 
 .cta-form {
@@ -759,8 +783,7 @@ section:nth-of-type(even) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 550px;
-    margin: auto;
+    width: 100%;
 }
 
 .cta-form input {
@@ -796,13 +819,33 @@ section:nth-of-type(even) {
     gap: 15px;
 }
 
+/* Efeito de inversão para o botão padrão no formulário */
+.cta-form-section .cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-form-section .cta-button:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+/* Estilo específico para o botão do WhatsApp */
 .whatsapp-button {
-    background-color: #25D366; /* Cor do WhatsApp */
+    background-color: var(--color-black);
+    color: #25D366; /* Verde do WhatsApp */
+    border: 2px solid #25D366;
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .whatsapp-button:hover {
-    background-color: #128C7E;
+    background-color: #25D366;
+    color: var(--color-black);
+    transform: translateY(-5px);
 }
 
 
