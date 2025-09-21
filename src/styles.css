@@ -329,11 +329,11 @@ section:nth-of-type(even) {
     position: absolute;
     top: 50%;
     left: 25%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(181, 11, 16, 0.25) 0%, rgba(181, 11, 16, 0) 70%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(181, 11, 16, 0.35) 0%, rgba(181, 11, 16, 0) 70%);
     transform: translate(-50%, -50%);
-    filter: blur(80px);
+    filter: blur(100px);
     z-index: 0;
     pointer-events: none;
 }
@@ -342,11 +342,11 @@ section:nth-of-type(even) {
     content: '';
     position: absolute;
     top: 10%;
-    right: -250px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(181, 11, 16, 0.2) 0%, rgba(181, 11, 16, 0) 70%);
-    filter: blur(90px);
+    right: -300px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(181, 11, 16, 0.3) 0%, rgba(181, 11, 16, 0) 70%);
+    filter: blur(100px);
     z-index: 0;
     pointer-events: none;
     animation: subtle-glow-move 12s ease-in-out infinite;
@@ -356,7 +356,7 @@ section:nth-of-type(even) {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    color: rgba(181, 11, 16, 0.15);
+    color: rgba(181, 11, 16, 0.2);
     font-weight: 700;
     z-index: 2;
     line-height: 1;
