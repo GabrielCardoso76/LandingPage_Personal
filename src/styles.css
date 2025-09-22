@@ -51,32 +51,23 @@ p {
     margin: 0 0 15px 0;
 }
 
-/* Glow Container for First Two Sections */
-.glow-container {
+.top-sections-wrapper {
     position: relative;
     z-index: 0;
 }
 
-.glow-container {
-    position: relative;
-    z-index: 0;
-    overflow: hidden; /* Contain the glow */
-    --glow-y-offset: 0px; /* JS will control this */
-}
-
-.glow-container::before {
+.top-sections-wrapper::before {
     content: '';
     position: absolute;
-    top: -50%; /* Start higher to allow for movement */
-    left: 0;
-    width: 100%;
-    height: 200%; /* Make it tall enough to move */
-    background: radial-gradient(circle at 50% 50%, rgba(181, 11, 16, 0.9) 0%, rgba(181, 11, 16, 0) 50%);
-    filter: blur(90px);
+    top: 40vh;
+    left: 50%;
+    width: 1600px;
+    height: 1600px;
+    background: radial-gradient(circle, rgba(181, 11, 16, 0.5) 0%, rgba(181, 11, 16, 0) 60%);
+    transform: translate(-50%, -50%);
+    filter: blur(100px);
     z-index: -1;
     pointer-events: none;
-    transform: translateY(var(--glow-y-offset));
-    transition: transform 0.3s ease-out;
 }
 
 /* Header (Seção Hero) */
@@ -84,25 +75,12 @@ p {
     padding: clamp(80px, 10vh, 120px) clamp(20px, 5vw, 50px);
     text-align: center;
     position: relative;
-    overflow: hidden;
     min-height: 100vh; /* Altura mínima para a seção hero */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75); /* Sobreposição escura */
-    z-index: 1;
-}
-
 
 .header-container {
     position: absolute; /* Posiciona a logo no topo */
@@ -220,12 +198,28 @@ section:nth-of-type(even) {
 }
 
 /* Blocos de Informação */
-.info-blocks-section {
+section.info-blocks-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
     background-color: transparent; /* Changed from var(--color-gray) */
+    position: relative;
+    overflow: hidden; /* Contain the glow */
+}
+
+section.info-blocks-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1000px;
+    height: 800px;
+    background: radial-gradient(circle at center, rgba(181, 11, 16, 0.6) 0%, rgba(181, 11, 16, 0) 60%);
+    transform: translateX(-50%);
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .info-block {
@@ -326,11 +320,11 @@ section:nth-of-type(even) {
 .app-tour-section::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 25%;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(181, 11, 16, 0.35) 0%, rgba(181, 11, 16, 0) 70%);
+    top: 60%;
+    left: 40%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(181, 11, 16, 0.6) 0%, rgba(181, 11, 16, 0) 70%);
     transform: translate(-50%, -50%);
     filter: blur(100px);
     z-index: 0;
@@ -342,9 +336,9 @@ section:nth-of-type(even) {
     position: absolute;
     top: 10%;
     right: -300px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(181, 11, 16, 0.3) 0%, rgba(181, 11, 16, 0) 70%);
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(181, 11, 16, 0.55) 0%, rgba(181, 11, 16, 0) 70%);
     filter: blur(100px);
     z-index: 0;
     pointer-events: none;
