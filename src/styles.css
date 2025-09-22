@@ -8,6 +8,10 @@
 }
 
 /* Estilos Gerais */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--color-white);
@@ -253,6 +257,10 @@ section.info-blocks-section::before {
 .stat-item p {
     font-size: 1rem;
     color: #ddd;
+}
+
+.text-red {
+  color: var(--color-primary);
 }
 
 .app-mockup {

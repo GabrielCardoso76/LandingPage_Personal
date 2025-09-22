@@ -2,7 +2,7 @@ import React from 'react';
 
 const CtaFormSection = () => {
   return (
-    <section id="contato-section" className="cta-form-section">
+    <section className="cta-form-section" id="contato-section">
       <h2 className="scroll-animate fade-in">Pronto Para Transformar Seu Corpo?</h2>
       <p className="scroll-animate fade-in delay-1">Cadastre-se para ser um dos primeiros a ter acesso ao app e a uma consultoria exclusiva.</p>
       <form className="cta-form scroll-animate fade-in delay-2">

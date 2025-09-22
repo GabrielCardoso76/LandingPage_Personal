@@ -35,10 +35,10 @@ const Header = () => {
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '20px', flexWrap: 'wrap', marginTop: '20px' }}>
-              <StarBorder as="a" href="#treino-section" color="red" speed="4s" onClick={(e) => handleSmoothScroll(e, '#treino-section')}>
+              <StarBorder as="a" color="red" href="#treino-section" speed="4s" onClick={(e) => handleSmoothScroll(e, '#treino-section')}>
                 QUERO SABER MAIS
               </StarBorder>
-              <StarBorder as="a" href="#contato-section" color="red" speed="4s" onClick={(e) => handleSmoothScroll(e, '#contato-section')}>
+              <StarBorder as="a" color="red" href="#contato-section" speed="4s" onClick={(e) => handleSmoothScroll(e, '#contato-section')}>
                 ENTRE EM CONTATO
               </StarBorder>
             </div>
