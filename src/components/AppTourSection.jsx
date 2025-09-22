@@ -40,7 +40,7 @@ const AppTourSection = () => {
 
   return (
     <section id="app-tour-section" className="app-tour-section">
-      <h2 className="scroll-animate fade-in">A revolução do seu treino na palma da mão</h2>
+      <h2 className="scroll-animate slide-up">A revolução do seu treino na palma da mão</h2>
 
       <div className="app-tour-layout">
 

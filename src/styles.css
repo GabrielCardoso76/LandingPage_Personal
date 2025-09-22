@@ -12,7 +12,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+html, body {
     font-family: 'Poppins', sans-serif;
     color: var(--color-white);
     background-color: var(--color-black);
@@ -20,6 +20,14 @@ body {
     overflow-x: hidden; /* Evita scroll horizontal indesejado */
     line-height: 1.6;
     position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -58,6 +66,7 @@ p {
 .top-sections-wrapper {
     position: relative;
     z-index: 0;
+    overflow: hidden; /* Previne que o brilho de fundo cause scroll horizontal */
 }
 
 .top-sections-wrapper::before {
@@ -179,6 +188,7 @@ p {
     margin-top: 40px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 1rem; /* Garante tamanho da fonte consistente */
 }
 
 .cta-button:hover {

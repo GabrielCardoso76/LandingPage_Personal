@@ -46,8 +46,8 @@ const FaqSection = () => {
 
   return (
     <section className="faq-section">
-      <h2 className="scroll-animate fade-in">Perguntas Frequentes</h2>
-      <div className="faq-container scroll-animate slide-up">
+      <h2 className="scroll-animate slide-up">Perguntas Frequentes</h2>
+      <div className="faq-container scroll-animate slide-up delay-1">
         {faqData.map((faq, index) => (
           <FaqItem
             key={index}
