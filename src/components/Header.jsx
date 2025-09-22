@@ -27,10 +27,10 @@ const Header = () => {
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '20px', flexWrap: 'wrap', marginTop: '20px' }}>
-              <StarBorder as="a" color="red" href="#treino-section" speed="4s">
+              <StarBorder as="a" color="red" speed="4s">
                 QUERO SABER MAIS
               </StarBorder>
-              <StarBorder as="a" color="red" href="#contato-section" speed="4s">
+              <StarBorder as="a" color="red" speed="4s">
                 ENTRE EM CONTATO
               </StarBorder>
             </div>
