@@ -4,7 +4,7 @@ import appMockupImage from '../assets/playstoryapp.png';
 
 const InfoBlocksSection = () => {
   return (
-    <section className="info-blocks-section">
+    <section id="treino-section" className="info-blocks-section">
       <div className="info-block scroll-animate slide-left">
         <h2>Seu Treino na Palma da Mão</h2>
         <p>Acompanhamento completo, treinos personalizados, metas e mais. Tudo o que você precisa para alcançar seus resultados em um só lugar.</p>

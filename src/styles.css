@@ -5,7 +5,6 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-gray: #3A3A3A;
-    --color-dark-red: #380B0D; /* Uma variação do vermelho para blocos */
 }
 
 /* Estilos Gerais */
@@ -242,7 +241,7 @@ section:nth-of-type(even) {
 }
 
 .dedication-block {
-    background-color: var(--color-dark-red);
+    background-color: var(--color-gray);
 }
 
 .stats-container {
@@ -410,7 +409,7 @@ section:nth-of-type(even) {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.8s ease-in-out;
+    transition: opacity 1.8s ease-in-out;
 }
 
 .app-screenshot.visible {
@@ -499,6 +498,11 @@ section:nth-of-type(even) {
     color: var(--color-white);
 }
 
+/* Muda a cor do timer para branco apenas nos cards vermelhos para garantir o contraste */
+.app-tour-feature-item.card-variant-red.active::after {
+    background-color: var(--color-white);
+}
+
 .app-tour-feature-item h3 {
     margin-bottom: 10px;
     font-weight: 700;
@@ -566,17 +570,18 @@ section:nth-of-type(even) {
 }
 
 .result-card {
-    background-color: var(--color-dark-red);
+    background-color: var(--color-gray);
     padding: 30px;
     border-radius: 12px;
     max-width: 350px;
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .result-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.5);
 }
 
 .result-photo {
@@ -620,11 +625,10 @@ section:nth-of-type(even) {
 }
 
 .pricing-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch; /* Alinha os cards na parte superior */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
+    align-items: stretch;
 }
 
 .pricing-card {
@@ -641,7 +645,7 @@ section:nth-of-type(even) {
     border: 2px solid transparent;
 }
 
-.pricing-card.highlight {
+.pricing-card:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 40px rgba(181, 11, 16, 0.4);
     border-color: var(--color-primary);
@@ -745,7 +749,7 @@ section:nth-of-type(even) {
 
 /* Formulário de Contato */
 .cta-form-section {
-    background-color: var(--color-dark-red);
+    background-color: var(--color-gray);
     padding-bottom: 120px; /* Mais espaço para o botão */
 }
 
@@ -784,11 +788,6 @@ section:nth-of-type(even) {
     color: #a0a0a0;
 }
 
-.cta-form .cta-button {
-    width: 100%;
-    margin-top: 20px;
-}
-
 .form-buttons-container {
     display: flex;
     flex-direction: column;
@@ -796,13 +795,32 @@ section:nth-of-type(even) {
     gap: 15px;
 }
 
-.whatsapp-button {
-    background-color: #25D366; /* Cor do WhatsApp */
+/* Estilos dos botões da CTA */
+.cta-form-section .cta-button {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    padding: 18px 35px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
 }
 
-.whatsapp-button:hover {
-    background-color: #128C7E;
+.cta-form-section .cta-button:hover {
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-7px) scale(1.02);
+}
+
+.cta-form-section .whatsapp-button:hover {
+    background-color: var(--color-black);
+    color: #25D366;
+    border-color: #25D366;
 }
 
 
