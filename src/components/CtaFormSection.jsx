@@ -18,7 +18,7 @@ const CtaFormSection = () => {
             <input type="email" placeholder="Seu E-mail" required />
             <input type="tel" placeholder="Seu WhatsApp" required />
             <div className="form-buttons-container">
-              <StarBorder as="button" type="submit" color="var(--color-primary)" className="cta-button">
+              <StarBorder as="button" type="submit" color="var(--color-primary)" speed="3s" thickness={2} className="cta-button">
                 QUERO COMEÇAR AGORA!
               </StarBorder>
               <StarBorder
@@ -26,7 +26,9 @@ const CtaFormSection = () => {
                 href="https://wa.me/5511999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                color="#25D366" // Verde do WhatsApp
+                color="#128C7E" // Verde escuro do WhatsApp
+                speed="3s"
+                thickness={2}
                 className="cta-button whatsapp-button"
               >
                 OU FALE NO WHATSAPP

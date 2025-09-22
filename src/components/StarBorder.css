@@ -35,7 +35,7 @@
 
 .inner-content {
   position: relative;
-  border: 1px solid #222;
+  border: 1px solid transparent; /* Borda transparente por padrão */
   background: #000;
   color: white;
   font-size: 16px;
@@ -43,6 +43,16 @@
   padding: 16px 26px;
   border-radius: 20px;
   z-index: 1;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.star-border-container:hover .inner-content {
+    border-color: #444; /* Borda sutil aparece no hover */
+}
+
+.whatsapp-button:hover .inner-content {
+    background-color: #128C7E; /* Fundo verde escuro no hover */
+    border-color: #128C7E;
 }
 
 @keyframes star-movement-bottom {
