@@ -790,9 +790,32 @@ section:nth-of-type(even) {
     gap: 15px;
 }
 
-/* Estilos dos botões da CTA agora são gerenciados por StarBorder.jsx e StarBorder.css */
-.cta-form-section .star-border-container {
+/* Estilos dos botões da CTA */
+.cta-form-section .cta-button {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    padding: 18px 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     width: 100%;
+}
+
+.cta-form-section .cta-button:hover {
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-7px) scale(1.02);
+}
+
+.cta-form-section .whatsapp-button:hover {
+    background-color: var(--color-black);
+    color: #25D366;
+    border-color: #25D366;
 }
 
 

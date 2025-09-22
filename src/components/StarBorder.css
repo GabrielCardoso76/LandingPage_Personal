@@ -5,37 +5,33 @@
   overflow: hidden;
 }
 
-.border-gradient-bottom,
-.border-gradient-top {
+.border-gradient-bottom {
   position: absolute;
   width: 300%;
   height: 50%;
-  opacity: 0; /* Invisível por padrão */
-  border-radius: 50%;
-  z-index: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.border-gradient-bottom {
+  opacity: 0.7;
   bottom: -12px;
   right: -250%;
+  border-radius: 50%;
   animation: star-movement-bottom linear infinite alternate;
+  z-index: 0;
 }
 
 .border-gradient-top {
+  position: absolute;
+  opacity: 0.7;
+  width: 300%;
+  height: 50%;
   top: -12px;
   left: -250%;
+  border-radius: 50%;
   animation: star-movement-top linear infinite alternate;
-}
-
-.star-border-container:hover .border-gradient-bottom,
-.star-border-container:hover .border-gradient-top {
-  opacity: 0.7; /* Visível no hover */
+  z-index: 0;
 }
 
 .inner-content {
   position: relative;
-  border: 1px solid transparent; /* Borda transparente por padrão */
+  border: 1px solid #222;
   background: #000;
   color: white;
   font-size: 16px;
@@ -43,16 +39,6 @@
   padding: 16px 26px;
   border-radius: 20px;
   z-index: 1;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.star-border-container:hover .inner-content {
-    border-color: #444; /* Borda sutil aparece no hover */
-}
-
-.whatsapp-button:hover .inner-content {
-    background-color: #128C7E; /* Fundo verde escuro no hover */
-    border-color: #128C7E;
 }
 
 @keyframes star-movement-bottom {
