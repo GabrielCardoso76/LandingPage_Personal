@@ -30,13 +30,13 @@ const InfoBlocksSection = () => {
         <div className="stats-container">
           <div className="stat-item">
             <h3 className="text-red">
-              <ShinyText text="200+" />
+              <ShinyText text="200+" speed={2} />
             </h3>
             <p>transformações</p>
           </div>
           <div className="stat-item">
             <h3 className="text-red">
-              <ShinyText text="7+" />
+              <ShinyText text="7+" speed={2} />
             </h3>
             <p>países atendidos</p>
           </div>
