@@ -12,29 +12,6 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    // Event delegation for smooth scrolling
-    const handleSmoothScroll = (e) => {
-      const link = e.target.closest('a[href^="#"]');
-      if (link) {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      }
-    };
-
-    document.addEventListener('click', handleSmoothScroll);
-
-    return () => {
-      document.removeEventListener('click', handleSmoothScroll);
-    };
-  }, []); // Run only once on mount
-
-  useEffect(() => {
     // This logic is adapted from the original animations.js file
     const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
 

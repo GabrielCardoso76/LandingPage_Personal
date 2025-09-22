@@ -255,6 +255,10 @@ section.info-blocks-section::before {
     color: #ddd;
 }
 
+.text-red {
+  color: var(--color-primary);
+}
+
 .app-mockup {
     margin: 30px auto 0;
     display: block;
