@@ -1,4 +1,5 @@
 import React from 'react';
+import StarBorder from './StarBorder'; // Importar o componente
 
 const CtaFormSection = () => {
   return (
@@ -14,13 +15,22 @@ const CtaFormSection = () => {
         <div className="cta-form-wrapper">
           <form className="cta-form scroll-animate fade-in delay-2">
             <input type="text" placeholder="Seu Nome Completo" required />
-            <input type="email" placeholder="Seu Melhor E-mail" required />
+            <input type="email" placeholder="Seu E-mail" required />
             <input type="tel" placeholder="Seu WhatsApp" required />
             <div className="form-buttons-container">
-              <button type="submit" className="cta-button">QUERO COMEÇAR AGORA!</button>
-              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="cta-button whatsapp-button">
+              <StarBorder as="button" type="submit" color="var(--color-primary)" className="cta-button">
+                QUERO COMEÇAR AGORA!
+              </StarBorder>
+              <StarBorder
+                as="a"
+                href="https://wa.me/5511999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="#25D366" // Verde do WhatsApp
+                className="cta-button whatsapp-button"
+              >
                 OU FALE NO WHATSAPP
-              </a>
+              </StarBorder>
             </div>
           </form>
         </div>

@@ -620,11 +620,10 @@ section:nth-of-type(even) {
 }
 
 .pricing-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch; /* Alinha os cards na parte superior */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
+    align-items: stretch;
 }
 
 .pricing-card {
@@ -746,36 +745,12 @@ section:nth-of-type(even) {
 /* Formulário de Contato */
 .cta-form-section {
     background-color: var(--color-gray);
-    padding: 120px 50px;
-}
-
-.cta-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.cta-text-content {
-    max-width: 750px;
-}
-
-.cta-form-section h2 {
-    margin-bottom: 20px;
+    padding-bottom: 120px; /* Mais espaço para o botão */
 }
 
 .cta-form-section p {
     font-size: 1.2rem;
-    line-height: 1.7;
-    margin-bottom: 0;
-}
-
-.cta-form-wrapper {
-    width: 100%;
-    max-width: 550px;
+    margin-bottom: 40px;
 }
 
 .cta-form {
@@ -783,7 +758,8 @@ section:nth-of-type(even) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 100%;
+    max-width: 550px;
+    margin: auto;
 }
 
 .cta-form input {
@@ -807,11 +783,6 @@ section:nth-of-type(even) {
     color: #a0a0a0;
 }
 
-.cta-form .cta-button {
-    width: 100%;
-    margin-top: 20px;
-}
-
 .form-buttons-container {
     display: flex;
     flex-direction: column;
@@ -819,33 +790,9 @@ section:nth-of-type(even) {
     gap: 15px;
 }
 
-/* Efeito de inversão para o botão padrão no formulário */
-.cta-form-section .cta-button {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: 2px solid var(--color-primary);
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-form-section .cta-button:hover {
-    background-color: transparent;
-    color: var(--color-primary);
-    transform: translateY(-5px);
-}
-
-/* Estilo específico para o botão do WhatsApp */
-.whatsapp-button {
-    background-color: var(--color-black);
-    color: #25D366; /* Verde do WhatsApp */
-    border: 2px solid #25D366;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    background-color: #25D366;
-    color: var(--color-black);
-    transform: translateY(-5px);
+/* Estilos dos botões da CTA agora são gerenciados por StarBorder.jsx e StarBorder.css */
+.cta-form-section .star-border-container {
+    width: 100%;
 }
 
 
