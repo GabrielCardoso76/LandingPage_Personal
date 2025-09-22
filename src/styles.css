@@ -12,7 +12,7 @@ html {
     scroll-behavior: smooth;
 }
 
-html, body {
+body {
     font-family: 'Poppins', sans-serif;
     color: var(--color-white);
     background-color: var(--color-black);
@@ -20,14 +20,6 @@ html, body {
     overflow-x: hidden; /* Evita scroll horizontal indesejado */
     line-height: 1.6;
     position: relative; /* Necessário para o posicionamento do pseudo-elemento */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-/* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-    display: none;
 }
 
 
@@ -66,7 +58,6 @@ p {
 .top-sections-wrapper {
     position: relative;
     z-index: 0;
-    overflow: hidden; /* Previne que o brilho de fundo cause scroll horizontal */
 }
 
 .top-sections-wrapper::before {
@@ -112,8 +103,8 @@ p {
     gap: 10px;
 }
 
-.logo {
-    width: 90px;
+.logo-container .logo {
+    /*width: 90px;*/
     height: auto;
 }
 
@@ -188,7 +179,6 @@ p {
     margin-top: 40px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    font-size: 1rem; /* Garante tamanho da fonte consistente */
 }
 
 .cta-button:hover {
@@ -250,6 +240,11 @@ section.info-blocks-section::before {
 
 .dedication-block {
     background-color: var(--color-gray);
+}
+
+.dedication-block .logo {
+    width: 450px !important;
+    margin-bottom: 20px;
 }
 
 .stats-container {
@@ -954,6 +949,8 @@ section.info-blocks-section::before {
     .hero-layout {
         flex-direction: column;
         text-align: center;
+        padding-left: 0; /* Remove o padding desnecessário no mobile */
+        gap: 40px; /* Reduz o espaçamento no mobile */
     }
     .hero-text-content {
         text-align: center;
@@ -1006,8 +1003,14 @@ section.info-blocks-section::before {
         align-items: center;
         gap: 30px;
     }
+    .pricing-grid {
+        gap: 20px; /* Reduz o espaçamento para o grid de preços */
+    }
     .info-block, .feature-item, .result-card, .pricing-card, .cta-form {
         max-width: 100%;
+    }
+    .dedication-block .logo {
+        width: 280px !important;
     }
     .app-image { width: 200px; }
     .testimonial { flex-direction: column; text-align: center; }
