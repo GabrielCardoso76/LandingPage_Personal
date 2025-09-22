@@ -7,7 +7,7 @@ const CtaFormSection = () => {
       <p className="scroll-animate fade-in delay-1">Cadastre-se para ser um dos primeiros a ter acesso ao app e a uma consultoria exclusiva.</p>
       <form className="cta-form scroll-animate fade-in delay-2">
         <input type="text" placeholder="Seu Nome Completo" required />
-        <input type="email" placeholder="Seu Melhor E-mail" required />
+        <input type="email" placeholder="Seu E-mail" required />
         <input type="tel" placeholder="Seu WhatsApp" required />
         <div className="form-buttons-container">
           <button type="submit" className="cta-button">QUERO COMEÇAR AGORA!</button>

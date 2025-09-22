@@ -6,6 +6,14 @@ import RotatingText from './RotatingText';
 import logo from '../assets/logo.png';
 
 const Header = () => {
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const rotatingTexts = [
     "Transforme Seu Corpo e Sua Vida",
     "Com Experiência de 10 Anos",
@@ -27,10 +35,10 @@ const Header = () => {
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '20px', flexWrap: 'wrap', marginTop: '20px' }}>
-              <StarBorder as="a" href="#treino-section" color="red" speed="4s">
+              <StarBorder as="a" href="#treino-section" color="red" speed="4s" onClick={(e) => handleSmoothScroll(e, '#treino-section')}>
                 QUERO SABER MAIS
               </StarBorder>
-              <StarBorder as="a" href="#contato-section" color="red" speed="4s">
+              <StarBorder as="a" href="#contato-section" color="red" speed="4s" onClick={(e) => handleSmoothScroll(e, '#contato-section')}>
                 ENTRE EM CONTATO
               </StarBorder>
             </div>

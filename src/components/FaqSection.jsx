@@ -34,10 +34,14 @@ const FaqItem = ({ faq, index, isOpen, toggleFaq }) => {
 };
 
 const FaqSection = () => {
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaqs, setOpenFaqs] = useState([]);
 
   const toggleFaq = (index) => {
-    setOpenFaq(openFaq === index ? null : index);
+    setOpenFaqs(prevOpenFaqs =>
+      prevOpenFaqs.includes(index)
+        ? prevOpenFaqs.filter(i => i !== index) // Fecha o FAQ se já estiver aberto
+        : [...prevOpenFaqs, index] // Abre o FAQ se estiver fechado
+    );
   };
 
   return (
@@ -49,7 +53,7 @@ const FaqSection = () => {
             key={index}
             faq={faq}
             index={index}
-            isOpen={openFaq === index}
+            isOpen={openFaqs.includes(index)}
             toggleFaq={toggleFaq}
           />
         ))}
