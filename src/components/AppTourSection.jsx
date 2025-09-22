@@ -14,7 +14,7 @@ const features = [
     title: "Avaliações sempre com você",
     description: "Faça o download de suas avaliações físicas e posturais diretamente no app.",
     image: imagemAvaliacoes,
-    variant: 'white'
+    variant: 'red'
   },
   {
     title: "Supervisão total",

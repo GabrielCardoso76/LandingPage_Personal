@@ -409,7 +409,7 @@ section:nth-of-type(even) {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1.2s ease-in-out;
+    transition: opacity 1.8s ease-in-out;
 }
 
 .app-screenshot.visible {
@@ -496,6 +496,11 @@ section:nth-of-type(even) {
 .app-tour-feature-item.card-variant-red {
     background-color: var(--color-primary);
     color: var(--color-white);
+}
+
+/* Muda a cor do timer para branco apenas nos cards vermelhos para garantir o contraste */
+.app-tour-feature-item.card-variant-red.active::after {
+    background-color: var(--color-white);
 }
 
 .app-tour-feature-item h3 {
